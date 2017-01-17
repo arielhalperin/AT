@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://stylessl.alibaba.com/js/beacon-cookie.html?v=20150204 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<script>
+String.prototype.Trim = function() {
+	return this.replace(/(^\s*)|(\s*$)/g, "")
+};
+var getCookie = function(i){
+    var f = "(?:; )?" + i + "=([^;]*);?";
+	var g = new RegExp(f);
+	if (g.test(document.cookie)) {
+		var h = decodeURIComponent(RegExp["$1"]);
+		if (h.Trim().length > 0) {
+			return h
+		} else {
+			return "-"
+		}
+	} else {
+		return "-"
+	}
+};
+var key = 'ali_beacon_id';
+window.parent.postMessage('get_beacon_cookie:'+getCookie(key),"*");
+</script>
+
+
+</body></html>
