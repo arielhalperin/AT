@@ -979,7 +979,9 @@
                     </div>
 
                     <div id="roomParticipants" class="">
-                        <div class="part"><img class="avatar_img_small" src="avatar_img/smart.jpg" alt=""><span class="avatar_name">Thomas Aaron</span></div>
+                        <span id="lotteryParticipantsHeader">Lottery Participants</span>
+                        <br>
+                        <div class="part" style="margin-top: 20px;"><img class="avatar_img_small" src="avatar_img/smart.jpg" alt=""><span class="avatar_name">Thomas Aaron</span></div>
                         <div class="part"><img class="avatar_img_small" src="avatar_img/tal.jpg" alt=""><span class="avatar_name">Tal Shemer</span></div>
                         <div class="part"><img class="avatar_img_small" src="avatar_img/CarltonBanks.jpg" alt=""><span class="avatar_name">Carlton Banks</span></div>
                         <div class="part"><img class="avatar_img_small" src="avatar_img/women2.jpg" alt=""><span class="avatar_name">Erica</span></div>
@@ -1023,7 +1025,7 @@
                                         <h3>
                                             Register
                                         </h3>
-                                        <form role="form" action="" method="post" class="login-form">
+                                        <form role="form" action="" method="post" class="login-form" id="login-form">
                                             <div class="form-group">
                                                 <label class="sr-only" for="form-firstname">Firstname</label>
                                                 <input type="text" name="form-firstname" placeholder="Firstname..." class="form-username form-control" id="form-firstname">
@@ -1044,7 +1046,7 @@
                                                 <label class="sr-only" for="form-password2">Repeat Password</label>
                                                 <input type="password" name="form-password2" placeholder="Repeat Password..." class="form-password form-control" id="form-password2">
                                             </div>
-                                            <button type="submit" class="btn_login">Sign up!</button>
+                                            <button id="signupButton" type="submit" class="btn_login">Sign up!</button>
                                         </form>
                                         <div class="register-methods">
                                             <h3>Or register with:</h3>
@@ -1114,14 +1116,21 @@
         float: left;
         margin-left: 150px;
         font-size: x-large;
+        border-left: 5px solid grey;
+        min-height: 490px;
     }
 
     #roomParticipants > .part{
         margin-bottom: 3px;
+        margin-left: 20px;
     }
 
     #roomParticipants  .avatar_name{
         margin-left: 5px;
+    }
+
+    #lotteryParticipantsHeader{
+        margin-left: 70px;
     }
 
     .avatar_img_small{
@@ -1136,10 +1145,44 @@
         background: #eee;
     }
 </style>
+
+
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
+
+    jQuery(document).ready(function() {
+
+        /*
+         Fullscreen background
+         */
+
+
+        /*
+         Form validation
+         */
+        $('.login-form input[type="text"], .login-form input[type="password"],  .login-form input[type="email"] , .login-form textarea').on('focus', function() {
+            $(this).removeClass('input-error');
+        });
+
+        $('.login-form').on('submit', function(e) {
+
+            $(this).find('input[type="text"], input[type="password"], input[type="email"],  textarea' ).each(function(){
+                if( $(this).val() == "" ) {
+                    e.preventDefault();
+                    $(this).addClass('input-error');
+                }
+                else {
+                    $(this).removeClass('input-error');
+                }
+            });
+
+        });
+
+
+    });
+
     $( ".pic" ).click(function() {
 
         var imgSrc = $(this).children('img').attr('src');
@@ -1151,6 +1194,20 @@
 
         $("#signupModal").modal();
     });
+
+    $( "#login-form" ).submit(function( event ) {
+        if( !$("#form-firstname").val() ||
+            !$("#form-lastname").val() ||
+            !$("#form-email").val()    ||
+            !$("#form-password").val() ||
+            !$("#form-password2").val() ){
+            return false;
+        }
+        var name = $("#form-firstname").val() + ' ' + $("#form-lastname").val();
+        event.preventDefault();
+        $("#signupModal").modal('toggle');
+    });
+
 
 
 </script>
