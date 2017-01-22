@@ -208,81 +208,15 @@
                         href="https://shoppingcart.aliexpress.com/shopcart/shopcartDetail.htm" rel="nofollow"><span
                         class="text hidden-sm">Cart</span></a><span class="cart-number" id="nav-cart-num">0</span></div>
 
-                <div class="nav-wishlist"><a href="https://my.aliexpress.com/wishlist/wish_list_product_list.htm"
-                                             rel="nofollow"><span class="text hidden-sm">Wish List</span></a>
-
-                    <div id="navWishlistCtn" class="nav-wishlist-ctn">
-                        <div class="nav-wishlist-msg" style="display: none;">
-                            <ul id="navWishListMsg"></ul>
-                        </div>
-                    </div>
+                <div class="nav-cart nav-cart-box">
+                    <i class="fa fa-tags fa-3x"></i>
+                    <span class="text hidden-sm" style="position: absolute;top: 25px; left: 50px;max-width: none;">Vouchers</span>
+                    <span class="cart-number" id="nav-cart-num2" style="    position: absolute;top: 4px;left: 65px; padding: 0 2px;">0</span>
                 </div>
 
-                <div class="nav-user-account" id="nav-user-account" data-widget-cid="widget-8">
-                    <div class="user-account-info" data-role="user-account-top">
-                        <div class="user-account-inner hidden-sm"><span class="account-unsigned" data-role="unsigned"><a
-                                data-role="sign-link"
-                                href="https://login.aliexpress.com/express/mulSiteLogin.htm?return=https%3A%2F%2Fwww.aliexpress.com%2F"
-                                rel="nofollow">Sign in</a><span class="ua-line">|</span><a data-role="join-link"
-                                                                                           href="https://us.ae.aliexpress.com/wsuser/buyerJoin/expressJoinIndex.htm?return=https%3A%2F%2Fwww.aliexpress.com%2F"
-                                                                                           rel="nofollow">Join</a></span>
-                            <span class="account-name" data-role="username">&nbsp;</span>
-
-                            <div class="myaliexpress" data-role="myaliexpress"><span data-role="myaliexpress-link">My AliExpress</span><b>(0)</b>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="user-account-main" data-role="user-account-main">
-                        <div class="flyout-user-signout" data-role="signout-btn"><a
-                                href="https://login.aliexpress.com/xman/xlogout.htm" rel="nofollow">Sign Out</a></div>
-
-                        <div class="flyout-user-signIn" data-role="user-signIn" style="display: block;">
-                            <p class="flyout-welcome-text" data-role="flyout-welcome">Welcome to AliExpress.com</p>
-
-                            <p><a class="sign-btn" data-role="sign-link"
-                                  href="https://login.aliexpress.com/express/mulSiteLogin.htm?return=https%3A%2F%2Fwww.aliexpress.com%2F"
-                                  rel="nofollow">Sign in</a></p>
-
-                            <p class="flyout-signIn-type"><span>Sign in with</span> <a class="nus-icon nus-facebook"
-                                                                                       data-role="login-type"
-                                                                                       href="https://thirdparty.aliexpress.com/login.htm?type=fb&amp;tracelog=ws_fb_topbar"
-                                                                                       rel="nofollow" title="facebook">
-                                &nbsp;</a> <a class="nus-icon nus-vk" data-role="login-type"
-                                              href="https://thirdparty.aliexpress.com/login.htm?type=vk&amp;tracelog=ws_vk_topbar"
-                                              rel="nofollow" title="vk">&nbsp;</a> <a class="nus-icon nus-google"
-                                                                                      data-role="login-type"
-                                                                                      href="https://thirdparty.aliexpress.com/login.htm?type=gg&amp;tracelog=ws_gg_mainlogin"
-                                                                                      rel="nofollow" title="google">
-                                &nbsp;</a></p>
-                        </div>
-                        <dl class="flyout-visitors-login" data-role="user-login" style="display: block;">
-                            <dt>New Customer?</dt>
-                            <dd><a class="join-btn" data-role="join-link"
-                                   href="https://us.ae.aliexpress.com/wsuser/buyerJoin/expressJoinIndex.htm?return=https%3A%2F%2Fwww.aliexpress.com%2F"
-                                   rel="nofollow">Join Free</a></dd>
-                        </dl>
-                        <div class="flyout-remind-list" id="flyout-remind-list"></div>
-                        <ul class="flyout-quick-entry" data-role="quick-entry">
-                            <li><a href="https://home.aliexpress.com/index.htm?tracelog=ws_topbar" rel="nofollow">My
-                                AliExpress</a></li>
-                            <li><a href="https://trade.aliexpress.com/orderList.htm?tracelog=ws_topbar" rel="nofollow">My
-                                Orders</a></li>
-                            <li><a href="https://msg.aliexpress.com/?tracelog=ws_topbar" rel="nofollow">Message
-                                Center</a></li>
-                            <li><a href="https://my.aliexpress.com/wishlist/wish_list_product_list.htm" rel="nofollow">Wish
-                                List</a></li>
-                            <li><a class="js-menu-my-favorite-stores"
-                                   href="https://my.aliexpress.com/wishlist/wish_list_store_list.htm" rel="nofollow">My
-                                Favorite Stores</a></li>
-                            <li><a href="https://coupon.aliexpress.com/buyer/coupon/listView.htm" rel="nofollow">My
-                                Coupons</a></li>
-                            <li><a href="http://login.aliexpress.com/alipay_wallet.htm?tracelog=topbar" rel="nofollow">My
-                                Alipay</a></li>
-                        </ul>
-                    </div>
+                <div id="usernameDiv">
+                    <i class="fa fa-user fa-3x"></i><span id="usernameSpan">Anonymous</span>
                 </div>
-                <!--ams-region-end 570-->
 
             </div>
             <div class="hm-middle">
@@ -1097,6 +1031,22 @@
 </div><!-- /.modal -->
 <!--noVoucherLeftModal-->
 <style>
+    .header .nav-cart {
+        width: 130px;
+    }
+
+
+    #usernameDiv{
+        float: left;
+        padding: 22px;
+    }
+
+    #usernameSpan{
+        margin-left: 15px;
+        font-size: medium;
+    }
+
+
     #itemImg{
         max-width: 100%;
     }
@@ -1192,7 +1142,13 @@
 
     $("#joinLottory").click(function() {
 
-        $("#signupModal").modal();
+        if($("#usernameSpan").html() == 'Anonymous'){
+            $("#signupModal").modal();
+            return;
+        };
+
+        alert('no more vouchers');
+
     });
 
     $( "#login-form" ).submit(function( event ) {
@@ -1205,6 +1161,7 @@
         }
         var name = $("#form-firstname").val() + ' ' + $("#form-lastname").val();
         event.preventDefault();
+        $("#usernameSpan").text(name);
         $("#signupModal").modal('toggle');
     });
 
