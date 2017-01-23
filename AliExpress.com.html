@@ -211,7 +211,7 @@
                 <div class="nav-cart nav-cart-box">
                     <i class="fa fa-tags fa-3x"></i>
                     <span class="text hidden-sm" style="position: absolute;top: 25px; left: 50px;max-width: none;">Vouchers</span>
-                    <span class="cart-number" id="nav-cart-num2" style="    position: absolute;top: 4px;left: 65px; padding: 0 2px;">0</span>
+                    <span class="cart-number" id="voucherNumber" style="    position: absolute;top: 4px;left: 65px; padding: 0 2px;">0</span>
                 </div>
 
                 <div id="usernameDiv">
@@ -945,7 +945,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
+                <h2 class="modal-title">Signup Form</h2>
             </div>
             <div class="modal-body" id="signupModalContent">
                 <!-- Top content -->
@@ -956,9 +956,7 @@
                             <div class="row">
                                 <div class="form-box">
                                     <div class="form-bottom">
-                                        <h3>
-                                            Register
-                                        </h3>
+
                                         <form role="form" action="" method="post" class="login-form" id="login-form">
                                             <div class="form-group">
                                                 <label class="sr-only" for="form-firstname">Firstname</label>
@@ -1037,19 +1035,95 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
+                <h2 class="modal-title">Voucher Packages</h2>
             </div>
             <div class="modal-body" id="voucherModalContent">
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="text-center">
+                    <div class="package panel panel-default">
+                        <div class="panel-heading">Single <i class="fa fa-tag"></i></div>
+                        <div class="panel-body">
+                            <div class="price">
+                               Pay 10$
+                            </div>
+                            <div class="voucher_number">
+                                Get <span class="vouchers_number">1</span> Voucher
+                            </div>
+                            <div class="save_money col-md-6">
+
+                            </div>
+                        </div>
+
+                        <div class=" buy-button">
+                            <button type="button" class="btn btn-success">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="package panel panel-default">
+                        <div class="panel-heading">Basic Package <i class="fa fa-tags"></i></div>
+                        <div class="panel-body">
+                            <div class="price">
+                                Pay 100$
+                            </div>
+                            <div class="voucher_number">
+                                Get<span class="vouchers_number"> 11 Vouchers</span>
+                            </div>
+                            <div class="free_vouchers">
+                                <span class="free_vouchers_number">1</span>
+                                <span class="free_vouchers_text">For Free</span>
+                            </div>
+
+                        </div>
+
+                        <div class=" buy-button">
+                            <button type="button" class="btn btn-success">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="package panel panel-default">
+                        <div class="panel-heading">Valuable Package <i class="fa fa-tags"></i><i class="fa fa-tags"></i></div>
+                        <div class="panel-body">
+                            <div class="price">
+                                Pay 500$
+                            </div>
+                            <div class="voucher_number">
+                                Get<span class="vouchers_number"> 60 Vouchers</span>
+                            </div>
+                            <div class="free_vouchers">
+                                <span class="free_vouchers_number">10</span>
+                                <span class="free_vouchers_text">For Free</span>
+                            </div>
+                        </div>
+
+                        <div class=" buy-button">
+                            <button type="button" class="btn btn-success">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="package panel panel-default">
+                        <div class="panel-heading">Best Package <i class="fa fa-tags"></i><i class="fa fa-tags"></i><i class="fa fa-tags"></i></div>
+                        <div class="panel-body">
+                            <div class="price">
+                                Pay 1000$
+                            </div>
+
+                            <div class="voucher_number">
+                                Get<span class="vouchers_number"> 130 Vouchers</span>
+                            </div>
+                            <div class="free_vouchers">
+                                <span class="free_vouchers_number">30</span>
+                                <span class="free_vouchers_text">For Free</span>
+                            </div>
+                        </div>
+                        <div class=" buy-button">
+                            <button type="button" class="btn btn-success">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--voucherModal-->
+
 <style>
     .header .nav-cart {
         width: 130px;
@@ -1111,8 +1185,61 @@
         width: 80%;
     }
 
-    #signupModal .modal-body{
+    #signupModal .modal-body, #signupModal .modal-header{
         background: #eee;
+    }
+
+
+    /*package*/
+
+    #voucherModal .modal-dialog{
+        width: 70%;
+    }
+
+    #voucherModal .modal-body{
+        overflow: auto;
+        min-height: 400px;
+    }
+
+    .price{
+        font-size: 40px;
+        height: 2.3em;
+    }
+
+    .save_money, .save_money_number{
+        font-size: 20px;
+    }
+
+    .package{
+        padding-bottom: 10px;
+        min-height: 200px;
+        width: 20%;
+        float: left;
+        margin-left: 45px;
+        position: relative;
+    }
+
+    .package .panel-body{
+        min-height: 300px;
+    }
+
+    .package .panel-heading{
+        font-size: 20px;
+    }
+
+    .buy-button {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+    }
+
+    .voucher_number{
+        font-size: 25px;
+        height: 3em;
+    }
+
+    .free_vouchers{
+        font-size: 30px;
     }
 </style>
 
@@ -1167,8 +1294,12 @@
             return;
         };
 
-        alert('no more vouchers');
+        if(parseInt($("#voucherNumber").html()) == 0){
+            $("#voucherModal").modal();
+            return;
+        }
 
+        alert("add to room");
     });
 
     $( "#login-form" ).submit(function( event ) {
@@ -1185,6 +1316,11 @@
         $("#signupModal").modal('toggle');
     });
 
+    $(".buy-button").click(function() {
+        var vouchers = parseInt($(this).parent().children('.panel-body').children('.voucher_number').children('.vouchers_number').html());
+        $("#voucherNumber").html(vouchers);
+        $("#voucherModal").modal('toggle');
+    });
 
 
 </script>
