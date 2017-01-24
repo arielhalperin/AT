@@ -44,6 +44,8 @@
 
     <link rel="stylesheet" href="app.css">
 
+    <link rel="stylesheet" href="slot.css">
+
     <link rel="shortcut icon" type="image/x-icon"
           href="https://ae01.alicdn.com/images/eng/wholesale/icon/aliexpress.ico">
     <link rel="search" type="application/opensearchdescription+xml"
@@ -1104,6 +1106,42 @@
 </div><!-- /.modal -->
 <!--voucherModal-->
 
+<!--slotModal-->
+<div id="slotModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body" id="slotModalContent">
+
+                <input type="radio" id="whirl" autocomplete="off">
+                <div class="pane">
+                    <div class="disc">
+                        <div class="part"><img class="avatar_img" src="avatar_img/smart.jpg" alt=""><span class="avatar_name">Thomas Aaron</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/tal.jpg" alt=""><span class="avatar_name">Tal Shemer</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/CarltonBanks.jpg" alt=""><span class="avatar_name">Carlton Banks</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/women2.jpg" alt=""><span class="avatar_name">Erica</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/jewish.JPG" alt=""><span class="avatar_name">Shmuel Hagag</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/old.jpg" alt=""><span class="avatar_name">Edward Snowden</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/smart.jpg" alt=""><span class="avatar_name">Richard Branson</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/women1.jpg" alt=""><span class="avatar_name">Emma Jackson</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/indian.jpg" alt=""><span class="avatar_name">Aayush Pandey</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/george.jpg" alt=""><span class="avatar_name">George Kostanza</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/ariel.jpg" alt=""><span class="avatar_name">Ariel Halperin</span></div>
+                        <div class="part"><img class="avatar_img" src="avatar_img/anna.jpg" alt=""><span class="avatar_name">Anna Friedman</span></div>
+                    </div>
+                    <div class="lever-hole">
+                        <label for="whirl" class="lever">
+                            <span class="ball"></span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--slotModal-->
+
 <style>
     .header .nav-cart {
         width: 130px;
@@ -1276,22 +1314,24 @@
 
     $("#joinLottory").click(function() {
 
-        if($("#usernameSpan").html() == 'Anonymous'){
-            $("#signupModal").modal();
-            return;
-        };
-
-        if(parseInt($("#voucherNumber").html()) == 0){
-            $("#voucherModal").modal();
-            return;
-        }
-
-        if ($("#usernameSpan").html() == $("#current-user-name").html()){
-            return;
-        }
+//        if($("#usernameSpan").html() == 'Anonymous'){
+//            $("#signupModal").modal();
+//            return;
+//        };
+//
+//        if(parseInt($("#voucherNumber").html()) == 0){
+//            $("#voucherModal").modal();
+//            return;
+//        }
+//
+//        if ($("#usernameSpan").html() == $("#current-user-name").html()){
+//            return;
+//        }
         var pretendDiv = '<div class="part current-user"><img class="avatar_img_small" src="avatar_img/ariel.jpg" alt=""><span class="avatar_name" id="current-user-name">Ariel Halperin</span></div>';
         $("#roomParticipants").append(pretendDiv);
         $("#joinLottory").prop('disabled',true);
+
+        $("#slotModal").modal();
 
         //start ticker for lottery
         return;
