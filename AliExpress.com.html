@@ -1120,7 +1120,7 @@
         font-size: medium;
     }
 
-
+    /*room*/
     #itemImg{
         max-width: 100%;
     }
@@ -1164,6 +1164,13 @@
     #itemRoomModal .modal-dialog{
         width: 80%;
     }
+
+    .current-user{
+        color: red;
+        font-weight: bold;
+    }
+
+    /*room*/
 
     #signupModal .modal-body, #signupModal .modal-header{
         background: #eee;
@@ -1279,7 +1286,15 @@
             return;
         }
 
-        alert("add to room");
+        if ($("#usernameSpan").html() == $("#current-user-name").html()){
+            return;
+        }
+        var pretendDiv = '<div class="part current-user"><img class="avatar_img_small" src="avatar_img/ariel.jpg" alt=""><span class="avatar_name" id="current-user-name">Ariel Halperin</span></div>';
+        $("#roomParticipants").append(pretendDiv);
+        $("#joinLottory").prop('disabled',true);
+
+        //start ticker for lottery
+        return;
     });
 
     $( "#login-form" ).submit(function( event ) {
