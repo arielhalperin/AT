@@ -1130,7 +1130,7 @@
                         <div class="part"><img class="avatar_img" src="avatar_img/anna.jpg" alt=""><span class="avatar_name">Anna Friedman</span></div>
                     </div>
                     <div class="lever-hole">
-                        <label for="whirl" class="lever">
+                        <label for="whirl" id="whirlLabel" class="lever">
                             <span class="ball"></span>
                         </label>
                     </div>
@@ -1327,12 +1327,18 @@
 //        if ($("#usernameSpan").html() == $("#current-user-name").html()){
 //            return;
 //        }
+
+
         var pretendDiv = '<div class="part current-user"><img class="avatar_img_small" src="avatar_img/ariel.jpg" alt=""><span class="avatar_name" id="current-user-name">Ariel Halperin</span></div>';
         $("#roomParticipants").append(pretendDiv);
         $("#joinLottory").prop('disabled',true);
+        var currentVouchers = parseInt($("#voucherNumber").html());
+        $("#voucherNumber").html(currentVouchers -1);
 
         $("#slotModal").modal();
 
+//        $(".lever").css('-webkit-transform','translateY(20px) rotateX(-60deg)');
+//        $(".lever").css('transform','translateY(20px) rotateX(-60deg)');
         //start ticker for lottery
         return;
     });

@@ -191,7 +191,7 @@ label.lever {
     background-repeat: no-repeat;
 }
 
-label.lever:active {
+.lever:active {
     -webkit-transform: translateY(20px) rotateX(-60deg);
     transform: translateY(20px) rotateX(-60deg);
 }
@@ -211,7 +211,7 @@ label.lever .ball {
     transform-style: preserve-3d;
 }
 
-label.lever:active .ball {
+.lever:active .ball {
     -webkit-transform: scaleY(1.7);
     transform: scaleY(1.7);
 }
@@ -265,32 +265,6 @@ input[type='radio']:checked ~ .btn-wrapper {
         pointer-events: auto;
         opacity: 1;
     }
-}
-
-.get-gift {
-    font-family: 'Bauhausc medium', sans-serif;
-    font-size: 16px;
-    line-height: inherit;
-    display: block;
-    max-width: 383px;
-    min-height: 48px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 25px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #7a610b;
-    border: 1px solid #dab023;
-    border-radius: 100px;
-    background-color: #e1b728;
-    background-image: linear-gradient(to top, #e1b728, #f5c72c);
-}
-
-.get-gift:hover {
-    background-color: yellow;
-    background-image: none;
 }
 
 
