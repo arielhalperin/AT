@@ -1177,7 +1177,7 @@
         width: 20%;
         float: left;
         margin-left: 150px;
-        font-size: x-large;
+        font-size: 1.4em;
         border-left: 5px solid grey;
         min-height: 490px;
     }
@@ -1227,7 +1227,7 @@
     }
 
     .price{
-        font-size: 40px;
+        font-size: 35px;
         height: 2.3em;
     }
 
@@ -1249,7 +1249,8 @@
     }
 
     .package .panel-heading{
-        font-size: 20px;
+        font-size: 15px;
+        font-weight: bold;
     }
 
     .buy-button {
@@ -1314,19 +1315,19 @@
 
     $("#joinLottory").click(function() {
 
-//        if($("#usernameSpan").html() == 'Anonymous'){
-//            $("#signupModal").modal();
-//            return;
-//        };
-//
-//        if(parseInt($("#voucherNumber").html()) == 0){
-//            $("#voucherModal").modal();
-//            return;
-//        }
-//
-//        if ($("#usernameSpan").html() == $("#current-user-name").html()){
-//            return;
-//        }
+        if($("#usernameSpan").html() == 'Anonymous'){
+            $("#signupModal").modal();
+            return;
+        };
+
+        if(parseInt($("#voucherNumber").html()) == 0){
+            $("#voucherModal").modal();
+            return;
+        }
+
+        if ($("#usernameSpan").html() == $("#current-user-name").html()){
+            return;
+        }
 
 
         var pretendDiv = '<div class="part current-user"><img class="avatar_img_small" src="avatar_img/ariel.jpg" alt=""><span class="avatar_name" id="current-user-name">Ariel Halperin</span></div>';
