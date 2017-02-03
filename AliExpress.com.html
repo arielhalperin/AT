@@ -888,7 +888,20 @@
     </div>
 </div>
 
-<div id="winnersRoom">
+<div id="winnersBar">
+    <span id="winnersBarHeader">Slot Winners</span>
+    <br>
+    <div class="part" style="margin-top: 20px;"><img class="avatar_img_small" src="avatar_img/smart.jpg" alt=""><span class="avatar_name">Thomas Aaron</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/tal.jpg" alt=""><span class="avatar_name">Tal Shemer</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/CarltonBanks.jpg" alt=""><span class="avatar_name">Carlton Banks</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/women2.jpg" alt=""><span class="avatar_name">Erica</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/jewish.JPG" alt=""><span class="avatar_name">Shmuel Hagag</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/old.jpg" alt=""><span class="avatar_name">Edward Snowden</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/smart.jpg" alt=""><span class="avatar_name">Richard Branson</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/women1.jpg" alt=""><span class="avatar_name">Emma Jackson</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/indian.jpg" alt=""><span class="avatar_name">Aayush Pandey</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/george.jpg" alt=""><span class="avatar_name">George Kostanza</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
+    <div class="part"><img class="avatar_img_small" src="avatar_img/anna.jpg" alt=""><span class="avatar_name">Anna Friedman</span><span class="gotFreeSpan">- got free</span><span class="wonProduct">Samsung TV</span></div>
 
 </div>
 
@@ -1332,14 +1345,39 @@
 
 <!--winnersRoomStyle-->
 <style>
-    #winnersRoom{
-        width: 17%;
-        height: 50%;
-        background: red;
+    #winnersBar{
+        width: 19%;
+        min-height: 300px;
         position: absolute;
-        left: 83%;
+        left: 81%;
         top: 160px;
+        font-weight: 600;
         z-index: 1000;
+        background-color: white;
+        border: 1px solid gray;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    #winnersBarHeader{
+        margin-left: 75px;
+        font-size: larger;
+    }
+
+    #winnersBar > .part{
+        margin-bottom: 3px;
+        display: none;
+    }
+
+    #winnersBar  .avatar_name{
+        margin-left: 5px;
+        font-size: smaller;
+    }
+
+    #winnersBar .wonProduct{
+        text-decoration: underline;
+        cursor: pointer;
+        margin-left: 3px;
     }
 </style>
 
@@ -1463,6 +1501,21 @@
         }, 6000);
     });
 
+    $(".wonProduct").click(function(){
+        var imgSrc = './AliExpress.com_files/HTB1WJ_vOVXXXXXCXpXX760XFXXXA.png';
+        $("#itemImg").attr('src', imgSrc);
+        $("#itemRoomModal").modal();
+    });
+
+    var tickerIndex=0;
+    winners = $("#winnersBar .part");
+    var winnersInterval = setInterval(function(){
+        $(winners[tickerIndex]).css('display','inherit');
+        tickerIndex++;
+        if (tickerIndex > 11){
+            clearInterval(winnersInterval);
+        }
+    },4000);
 
 </script>
 </body>
