@@ -28,6 +28,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <link rel="stylesheet" href="bootstrap-login-forms/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fireworks/fireworks.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -887,8 +888,13 @@
     </div>
 </div>
 
+<div id="winnersRoom">
+
+</div>
+
 <!--itemRoomModal-->
 <div id="itemRoomModal" class="modal fade" tabindex="-1" role="dialog">
+
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -896,6 +902,7 @@
                 <h4 class="modal-title">Modal title</h4>
             </div>
             <div class="modal-body" id="itemRoomModalContent">
+                <canvas id="sky" style="position:absolute"></canvas>
                 <div class="row">
                     <div  class="itemImgDiv">
                         <img id="itemImg" src="">
@@ -933,8 +940,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button id="joinLottory" type="button" class="btn btn-primary">Join</button>
+                <button id="joinLottory" type="button" class="btn btn-primary">Join Lottery</button>
+                <button id="directBuy" type="button" class="btn btn-success">Buy item</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -1010,6 +1017,60 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--signupModal-->
+
+<!--deliveryModal-->
+<div id="deliveryModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">Shipping</h2>
+            </div>
+            <div class="modal-body" id="deliverypModalContent">
+                <!-- Top content -->
+                <div class="top-content">
+
+                    <div class="inner-bg">
+                        <div>
+                            <div class="row">
+                                <div class="form-box">
+                                    <div class="form-bottom">
+
+                                        <form role="form" action="" method="post" class="login-form" id="delivery-form">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-email">Country</label>
+                                                <input type="email" name="form-email" placeholder="Country..." class="form-username form-control" id="form-country">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-lastname">City</label>
+                                                <input type="text" name="form-lastname" placeholder="City..." class="form-username form-control" id="form-city">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-firstname">Address</label>
+                                                <input type="text" name="form-firstname" placeholder="Address..." class="form-username form-control" id="form-address">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="form-password">Postal Code</label>
+                                                <input type="text" name="form-password" placeholder="Postal Code..." class="form-password form-control" id="form-postal">
+                                            </div>
+
+                                            <button id="confirmBuyButton" type="submit" class="btn_login">Buy</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--deliverypModal-->
 
 <!--voucherModal-->
 <div id="voucherModal" class="modal fade" tabindex="-1" role="dialog">
@@ -1269,10 +1330,25 @@
     }
 </style>
 
+<!--winnersRoomStyle-->
+<style>
+    #winnersRoom{
+        width: 17%;
+        height: 50%;
+        background: red;
+        position: absolute;
+        left: 83%;
+        top: 160px;
+        z-index: 1000;
+    }
+</style>
+
+<!--winnersRoomStyle-->
 
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="fireworks/fireworks.js"></script>
 <script>
 
     jQuery(document).ready(function() {
@@ -1311,6 +1387,20 @@
         var imgSrc = $(this).children('img').attr('src');
         $("#itemImg").attr('src', imgSrc);
         $("#itemRoomModal").modal();
+    });
+
+    $("#directBuy").click(function() {
+
+        if ($("#usernameSpan").html() == 'Anonymous') {
+            $("#signupModal").modal();
+            return;
+        };
+
+        $("#deliveryModal").modal();
+    });
+
+    $("#confirmBuyButton").click(function() {
+        alert("confirm");
     });
 
     $("#joinLottory").click(function() {
@@ -1362,6 +1452,15 @@
         var vouchers = parseInt($(this).parent().children('.panel-body').children('.voucher_number').children('.vouchers_number').html());
         $("#voucherNumber").html(vouchers);
         $("#voucherModal").modal('toggle');
+    });
+
+    $("#whirl").change(function() {
+        myVar = setInterval(function(){
+            var anim = animate('#sky');
+            $("#sky").css('width','100%');
+            setTimeout(function() { anim.stop(); }, 10000);
+            clearInterval(myVar);
+        }, 6000);
     });
 
 
