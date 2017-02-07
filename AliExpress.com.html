@@ -1507,10 +1507,10 @@
         $("#itemRoomModal").modal();
     });
 
-    var tickerIndex=0;
+    var tickerIndex=1;
     winners = $("#winnersBar .part");
     var winnersInterval = setInterval(function(){
-        $(winners[tickerIndex]).css('display','inherit');
+        $(winners[winners.length - tickerIndex]).css('display','inherit');
         tickerIndex++;
         if (tickerIndex > 11){
             clearInterval(winnersInterval);
