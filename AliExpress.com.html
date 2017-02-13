@@ -954,7 +954,7 @@
             </div>
             <div class="modal-footer">
                 <button id="joinLottory" type="button" class="btn btn-primary">Join Lottery</button>
-                <button id="directBuy" type="button" class="btn btn-success">Buy item</button>
+                <button type="button" class="btn btn-success directBuy">Buy item</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -1209,7 +1209,11 @@
                         </label>
                     </div>
                 </div>
+            </div>
 
+            <div class="modal-footer">
+                <button id="getFreeItem" type="button" class="btn btn-primary directBuy" disabled="">Get Free Item</button>
+                <button type="button" class="btn btn-success directBuy" disabled="">Buy item</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -1427,7 +1431,9 @@
         $("#itemRoomModal").modal();
     });
 
-    $("#directBuy").click(function() {
+    $(".directBuy").click(function() {
+
+        $("#slotModal").modal('hide');
 
         if ($("#usernameSpan").html() == 'Anonymous') {
             $("#signupModal").modal();
@@ -1494,9 +1500,14 @@
 
     $("#whirl").change(function() {
         myVar = setInterval(function(){
+            $("#getFreeItem").prop('disabled',false);
             var anim = animate('#sky');
             $("#sky").css('width','100%');
-            setTimeout(function() { anim.stop(); }, 10000);
+            setTimeout(function() {
+                anim.stop();
+                $("#slotModal").modal('hide');
+                $("#deliveryModal").modal();
+            }, 10000);
             clearInterval(myVar);
         }, 6000);
     });
